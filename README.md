@@ -18,6 +18,16 @@ Please note Windows images are built on CircleCI, so we suggest you run through 
   * AWS_ACCESS_KEY_ID	    
   * AWS_DEFAULT_REGION		
   * AWS_SECRET_ACCESS_KEY
+  
+  Note: You will have to create a context, then add it to the config.yaml file (workflows section)
+  
+  ```
+  workflows:
+  build_all_images:
+    jobs:
+      - windows_visualstudio_aws:
+          context: ami-builder
+  ```
 
 5. Update the owner in `windows/visual-studio/packer.yaml` if you configured the keys under a different account to the once your Circleci Server installation is under. If you get any errors around not being able to find a default VPC, you will need to specify a `vpc_id` and `subnet_id` in this file.
 
