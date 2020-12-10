@@ -7,7 +7,7 @@ jobs:
     - run:
         name: Installing Git & SSH
         command: | 
-          sudo apt install git openssh-client -y      
+          apt install git openssh-client -y      
     - checkout
     - run:
         command: apk update
