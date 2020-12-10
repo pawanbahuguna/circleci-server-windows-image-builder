@@ -4,6 +4,10 @@ jobs:
     docker:
     - image: hashicorp/packer:latest
     steps:
+    - run:
+        name: Installing Git & SSH
+        command: | 
+          sudo apt install git openssh-client -y      
     - checkout
     - run:
         command: apk update
