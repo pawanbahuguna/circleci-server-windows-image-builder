@@ -99,6 +99,7 @@ workflows:
   build_all_images:
     jobs:
       - windows_visualstudio_aws:
+          context: ami-builder
           filters:
             branches:
               only:
